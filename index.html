@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA Explorer</title>
+
+<style>
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #e0e5ec;
+  color: #333;
+  text-align: center;
+}
+
+/* ===== 3D TEXT ===== */
+.text-3d {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3498db;
+  text-shadow: 2px 2px 0 #2980b9,
+               4px 4px 0 #2c3e50,
+               6px 6px 10px rgba(0,0,0,0.3);
+  margin: 40px 20px 20px 20px;
+}
+
+/* ===== 3D BUTTONS ===== */
+.button-3d {
+  display: inline-block;
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px #1c5980;
+  text-decoration: none;
+  margin: 10px;
+  transition: 0.2s;
+}
+.button-3d:hover {
+  transform: translateY(2px);
+  box-shadow: 0 6px #1c5980;
+}
+.button-3d:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 #1c5980;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px #b8c1ce, -8px -8px 15px #ffffff;
+  transition: 0.3s;
+}
+section:hover {
+  box-shadow: 4px 4px 10px #b8c1ce, -4px -4px 10px #ffffff;
+}
+
+/* ===== BLOCKQUOTE ===== */
+blockquote {
+  border-left: 6px solid #3498db;
+  padding: 20px;
+  margin: 20px auto;
+  font-style: italic;
+  max-width: 800px;
+  background: #f4f4f9;
+  border-radius: 12px;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== PRE ===== */
+pre {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== VIDEO BOX ===== */
+.video-box iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 12px;
+  margin: 15px 0;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ===== CONTACT US ===== */
+.contact-card {
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px #b8c1ce, -8px -8px 15px #ffffff;
+  padding: 30px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.contact-card h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+.contact-card a {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px 15px;
+  background: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 6px #1c5980;
+  transition: 0.2s;
+}
+.contact-card a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.contact-card a:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px #1c5980;
+}
+.contact-card a:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 #1c5980;
+}
+
+/* ===== FOOTER 3D ===== */
+footer {
+  margin-top: 50px;
+  padding: 40px 20px;
+  background: #8e44ad;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0;
+  text-shadow: 2px 2px 0 #2980b9,
+               4px 4px 0 #2c3e50,
+               6px 6px 10px rgba(0,0,0,0.3);
+}
+footer a {
+  color: #ffeb3b;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+
+/* ===== HR ===== */
+hr {
+  border: none;
+  height: 3px;
+  width: 50%;
+  margin: 30px auto;
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="text-3d">Welcome to SA Explorer</div>
+  <p>College Journey | Vlogs | Travel | Fun</p>
+  <a href="https://www.youtube.com/@SAExplorers?sub_confirmation=1" target="_blank" class="button-3d">Subscribe</a>
+  <a href="https://www.youtube.com/@SAExplorers" target="_blank" class="button-3d">Visit Channel</a>
+</div>
+
+<!-- LATEST VIDEOS -->
+<section>
+  <h2>Latest Videos</h2>
+  <hr>
+  <blockquote>
+    "Explore the world with us! College adventures, travel vlogs, and fun experiences all in one place."
+  </blockquote>
+  <div class="video-box">
+    <iframe src="https://www.youtube.com/embed/7_4aM7f7Cwc" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/IxWeeBzgpqE" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- SHORT VIDEOS -->
+<section>
+  <h2>Short Videos</h2>
+  <hr>
+  <div class="video-box">
+    <iframe src="https://www.youtube.com/embed/Jcm5HtwxcJ4" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/YOZbT0vz2z8" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- CONTACT US -->
+<section class="contact-card">
+  <h2>Contact Us</h2>
+  <a href="https://wa.me/917588119884" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> Atharv Mendhulkar
+  </a>
+  <a href="https://wa.me/919923653244" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> Sanchit Chalakh
+  </a>
+  <a href="mailto:sa.explorer99@gmail.com">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"> Email
+  </a>
+  <a href="https://www.instagram.com/s_a_explorer_01_" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"> Instagram
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Thank you for visiting! ❤️ <br>
+  <a href="https://www.youtube.com/@SAExplorers?sub_confirmation=1" target="_blank">Subscribe to My Channel</a>
+</footer>
+
+</body>
+</html>
