@@ -175,20 +175,19 @@ hr {
   <a href="https://www.youtube.com/@SAExplorers" target="_blank" class="button-3d">Visit Channel</a>
 </div>
 
-<!-- LATEST VIDEOS -->
+<!-- LATEST VIDEOS (Loaded Dynamically) -->
 <section>
   <h2>Latest Videos</h2>
   <hr>
   <blockquote>
     "Explore the world with us! College adventures, travel vlogs, and fun experiences all in one place."
   </blockquote>
-  <div class="video-box">
-    <iframe src="https://www.youtube.com/embed/7_4aM7f7Cwc" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/IxWeeBzgpqE" allowfullscreen></iframe>
+  <div class="video-box" id="latestVideos">
+    <!-- Videos will be inserted here dynamically -->
   </div>
 </section>
 
-<!-- SHORT VIDEOS -->
+<!-- SHORT VIDEOS (Static) -->
 <section>
   <h2>Short Videos</h2>
   <hr>
@@ -222,6 +221,35 @@ hr {
   Thank you for visiting! ❤️ <br>
   <a href="https://www.youtube.com/@SAExplorers?sub_confirmation=1" target="_blank">Subscribe to My Channel</a>
 </footer>
+
+<!-- ===== YOUTUBE API SCRIPT ===== -->
+<script>
+const API_KEY = "YOUR_API_KEY"; // Replace with your API key
+const CHANNEL_ID = "YOUR_CHANNEL_ID"; // Replace with your channel ID
+const MAX_RESULTS = 4;
+
+async function fetchLatestVideos() {
+  const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`;
+  
+  const response = await fetch(url);
+  const data = await response.json();
+  
+  const videoContainer = document.getElementById("latestVideos");
+  videoContainer.innerHTML = ""; // Clear existing content
+
+  data.items.forEach(item => {
+    if(item.id.videoId) {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${item.id.videoId}`;
+      iframe.allowFullscreen = true;
+      videoContainer.appendChild(iframe);
+    }
+  });
+}
+
+// Fetch videos when page loads
+window.onload = fetchLatestVideos;
+</script>
 
 </body>
 </html>
